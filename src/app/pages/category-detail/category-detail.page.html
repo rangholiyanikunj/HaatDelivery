@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ category?.name || 'Category Details' }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="category; else noCategory">
+    <ion-card>
+      <img [src]="category.image || 'assets/default-image.jpg'" alt="{{ category.name }}">
+      <ion-card-header>
+        <ion-card-title>{{ category.name }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>{{ category.description }}</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <ng-template #noCategory>
+    <p class="error-message">Category not found.</p>
+  </ng-template>
+</ion-content>

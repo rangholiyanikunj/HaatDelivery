@@ -1,0 +1,55 @@
+ion-segment {
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 1000;
+  }
+  
+  .category-title {
+    top: 50px;
+    background: white;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    z-index: 900;
+    color: burlywood;
+  }
+  
+  .subcategory-title {
+    position: sticky;
+    top: 100px;
+    background: white;
+    padding: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    z-index: 800;
+  }
+  
+  .category-container {
+    overflow-y: auto;
+    max-height: 80vh;
+  }
+  
+
+//   ================================ segment button css ============================================
+
+  ion-segment-button {
+    --background: white;
+    --color: black;
+  
+    &.segment-activated {
+      --background: pink !important;
+      --color: black !important;
+    }
+  }
+
+//  =======================  image size same css ========================================================
+
+  ion-img {
+    width: 100%;
+    height: 150px; /* Set your desired fixed height */
+    object-fit: cover; /* Ensures image fills the space while maintaining aspect ratio */
+    border-radius: 8px; /* Optional: For rounded corners */
+  }
+  
+  

@@ -1,0 +1,34 @@
+hallenge: Default Category Selection on Page Load
+Issue: On page load, the first category should be selected automatically.
+Solution:
+
+Use ngOnInit() to wait for the API response.
+
+Set selectedCategory to the first category.
+
+Call scrollToCategory() after data loads.
+
+==================================================================
+
+Evaluation Criteria:
+
+1. Functionality ✅:
+   - Does the app meet the requirements outlined in the assignment?
+   A : Double-check all features using manual testing and automated tests.
+
+2. Code Quality 💻:
+   - Is the code well-structured, readable, and maintainable?
+   A : Use meaningful variable names & comments to improve readability.
+
+3. UI/UX 🎨:
+   - Is the user interface intuitive and visually appealing?
+   A : Use Ionic UI components effectively (cards, lists, buttons).
+
+4. Problem-solving 🧩:
+   - How effectively did you address the challenges of each requirement?
+   A : Document key challenges you faced (API issues, UI bugs, performance).
+
+5. Documentation 📖:
+   - Are the setup instructions and feature explanations clear and comprehensive?
+   A : Write a detailed README with step-by-step setup.
+	   Include Video app output of key app features.

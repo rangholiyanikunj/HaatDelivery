@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="selectedCategory" scrollable>
+      <ion-segment-button 
+        *ngFor="let category of categories" 
+        [value]="category"
+        (click)="scrollToCategory(category.id)"
+        [class.segment-activated]="selectedCategory === category">
+        {{ category.name?.['en-US'] || category.name?.default || 'Unnamed' }}
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="category-container" #categoryContainer>
+    <div *ngFor="let category of categories" class="category-section" [attr.data-id]="category.id" style="padding-top: 5%;">
+      <span class="category-title" id="category-{{ category.id }}">
+        {{ category.name?.['en-US'] || category.name?.default || 'Unnamed' }}
+      </span>
+
+      <div *ngIf="category.products && category.products.length > 0">
+        <ion-grid>
+          <ion-row>
+            <ion-col size="6" size-md="4" size-lg="3" *ngFor="let product of category.products">
+              <ion-card>
+                <ion-img [src]="getItemImage(product)" alt="Product Image"></ion-img>
+                <ion-card-content>
+                  <b style="color: black;"> <span>&#x20AA;</span> {{ product.basePrice || 'N/A' }}</b> <br>
+                  <b>{{ product.name?.['en-US'] || product.name?.default || 'Unnamed' }}</b>
+                  <!-- <p>Price: {{ product.weightToPresent || 'N/A' }}</p> -->
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+      <p *ngIf="!category.products || category.products.length === 0">
+        No products available.
+      </p>
+    </div>
+  </div>
+</ion-content>
